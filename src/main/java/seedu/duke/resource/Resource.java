@@ -14,6 +14,12 @@ public class Resource {
         this.dateOfCreation = LocalDate.now();
     }
 
+    public Resource(String resourceLink, String resourceDescription, LocalDate dateOfCreation) {
+        this.resourceLink = resourceLink;
+        this.resourceDescription = resourceDescription;
+        this.dateOfCreation = dateOfCreation;
+    }
+
     public String getResourceLink() {
         return resourceLink;
     }
@@ -42,6 +48,10 @@ public class Resource {
 
     public void setResourceDescription(String resourceDescription) {
         this.resourceDescription = resourceDescription;
+    }
+
+    public LocalDate getDateOfCreation() {
+        return dateOfCreation;
     }
 
     @Override
