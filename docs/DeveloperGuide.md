@@ -120,6 +120,62 @@ If PROJECT_NAME is not found in the database, the application prompts the user t
 The user can execute `list p/CS2113` to verify that the specified resource has been deleted from the project.
 
 
+### Finding resource(s) in a project or all projects based on a keyword
+**Proposed Implementation**
+
+Given below is an example usage scenario and how the find mechanism behaves at each step.
+
+**Step 1**:
+The user initialises the application and adds the resources, Project and Resource objects are created accordingly.
+
+**Step 2**:
+The user wants to find resources that match a keyword website in his project CS2113. 
+He executes the following command to print out a list of resources in CS2113 that match the input keyword.
+> find k/website p/CS2113
+
+**Step 3**:
+If the project name cannot be found, the user will be prompted to search for a valid project name.
+If the project name is not given, such as in the following command, all projects will be searched to find resources matching the keyword. 
+> find k/website
+
+**Design Consideration**
+
+Aspect: How find executes
+* Alternative 1 (current choice):
+  * Allow the user to input find k/KEYWORD p/PROJECTNAME or find k/KEYWORD 
+    based on whether he wants to find relevant resources in a single project or all projects.
+  * **Pros**: Fewer commands for the user to choose between. Simple to implement.
+* Alternative 2:
+  * Allow the user to input 2 separate commands find p/PROJECTNAME k/KEYWORD and find-all k/KEYWORD 
+    based on whether he wants to find relevant resources in a single project or all projects.
+  * **Pros**: Simple to implement.
+  * **Cons**: More functions and code required.
+
+### Exiting TraceYourProj
+**Proposed Implementation**
+
+Given below is an example usage scenario and how the exit mechanism behaves at each step.
+
+**Step 1**:
+The user initialises the application and adds the resources, Project and Resource objects are created accordingly.
+
+**Step 2**:
+The user has finished using the application and wishes to exit the application. He executes the following command to leave the application. 
+> exit
+
+**Design Consideration**
+
+Aspect: How exit executes
+* Alternative 1 (current choice):
+  * Break out of do-while loop in the main function in Duke when boolean condition isLoop 
+    is no longer true.
+  * **Pros**: Easy to implement.
+  * **Cons**: Possibility of entering an infinite loop if not properly coded.
+* Alternative 2:
+  * Execute System.Exit(0) when exit is executed.
+  * **Pros**: Easy to implement.
+  * **Cons**: Reduces testability since more code is required to throw an exception when System.exit is 
+    called and catch that exception, so the JUnit test does not fail.
 
 
 ## Product scope
@@ -136,7 +192,9 @@ The user can execute `list p/CS2113` to verify that the specified resource has b
 |Version| As a ... | I want to ... | So that I can ...|
 |--------|----------|---------------|------------------|
 |v1.0|new user|see usage instructions|refer to them when I forget how to use the application|
+|v1.0|user|exit TraceYourProj when I finish managing my resources|leave TraceYourProj|
 |v2.0|user|find a to-do item by name|locate a to-do without having to go through the entire list|
+|v2.0|user|find resources I have that are related to a keyword I specify|easily find resources I need without going through each project and resources
 
 ## Non-Functional Requirements
 
