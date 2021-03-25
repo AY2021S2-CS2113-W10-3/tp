@@ -2,6 +2,7 @@ package seedu.duke;
 
 import seedu.duke.command.CommandHandler;
 import seedu.duke.parser.InputParser;
+import seedu.duke.storage.Storage;
 import seedu.duke.ui.MainUi;
 
 import java.util.ArrayList;
@@ -21,10 +22,11 @@ public class Duke {
             CommandHandler commandHandler = new CommandHandler(userInput, projects);
             isLoop = commandHandler.processCommand();
         } while (isLoop);
+        Storage.updateStorage(projects);
     }
 
     private static void initializeDuke() {
-        projects = new ArrayList<>();
+        projects = Storage.readFromStorage();
         scan = new Scanner(System.in);
     }
 
@@ -34,5 +36,9 @@ public class Duke {
             userInput = scan.nextLine();
         }
         return new InputParser(userInput);
+    }
+
+    public static ArrayList<Project> getProjects() {
+        return projects;
     }
 }
