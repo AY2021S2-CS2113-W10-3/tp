@@ -12,12 +12,7 @@ import java.io.PrintStream;
 import java.time.LocalDate;
 
 class DukeTest {
-    String dukeStandardHeading = MainUi.LOGO_STRING + "\n"
-            + MainUi.PROJECT_TEAM_ID + "\n"
-            + MainUi.APP_NAME_AND_VERSION + "\n"
-            + MainUi.HOW_TO_GET_HELP + "\n"
-            + MainUi.SIGNAL_FOR_USER_TO_INPUT;
-
+    
     @Test
     public void dummyTest() {
         assertTrue(true);
@@ -36,7 +31,7 @@ class DukeTest {
 
         Duke.main(null);
 
-        String targetString = dukeStandardHeading
+        String targetString = MainUi.DUKE_STANDARD_HEADING
                 + "The resource is added into the new project \"CS2113 Group Project\".\n"
                 + MainUi.SIGNAL_FOR_USER_TO_INPUT
                 + "Here is the list of all project(s) and it's resource(s)!\n"
@@ -69,7 +64,7 @@ class DukeTest {
 
         Duke.main(null);
 
-        String targetString = dukeStandardHeading
+        String targetString = MainUi.DUKE_STANDARD_HEADING
                 + "The resource is added into the new project \"CS2113 Group Project\".\n"
                 + MainUi.SIGNAL_FOR_USER_TO_INPUT
                 + "The resource is added to the existing project \"CS2113 Group Project\".\n"
@@ -107,7 +102,7 @@ class DukeTest {
 
         Duke.main(null);
 
-        String targetString = dukeStandardHeading
+        String targetString = MainUi.DUKE_STANDARD_HEADING
                 + "The resource is added into the new project \"CS2113 Group Project\".\n"
                 + MainUi.SIGNAL_FOR_USER_TO_INPUT
                 + "The resource of the project \"CS2113 Group Project\" is overwritten.\n"
@@ -143,7 +138,7 @@ class DukeTest {
 
         Duke.main(null);
 
-        String targetString = dukeStandardHeading
+        String targetString = MainUi.DUKE_STANDARD_HEADING
                 + "The resource is added into the new project \"CS2113 Group Project\".\n"
                 + MainUi.SIGNAL_FOR_USER_TO_INPUT
                 + "The resource is added to the existing project \"CS2113 Group Project\".\n"
@@ -184,7 +179,7 @@ class DukeTest {
 
         Duke.main(null);
 
-        String targetString = dukeStandardHeading
+        String targetString = MainUi.DUKE_STANDARD_HEADING
                 + "The resource is added into the new project \"CS2113 Group Project\".\n"
                 + MainUi.SIGNAL_FOR_USER_TO_INPUT
                 + "The resource is added to the existing project \"CS2113 Group Project\".\n"
@@ -226,7 +221,7 @@ class DukeTest {
 
         Duke.main(null);
 
-        String targetString = dukeStandardHeading
+        String targetString = MainUi.DUKE_STANDARD_HEADING
                 + "The resource is added into the new project \"CS2113 Group Project\".\n"
                 + MainUi.SIGNAL_FOR_USER_TO_INPUT
                 + "The resource is added to the existing project \"CS2113 Group Project\".\n"
@@ -274,7 +269,7 @@ class DukeTest {
 
         Duke.main(null);
 
-        String targetString = dukeStandardHeading
+        String targetString = MainUi.DUKE_STANDARD_HEADING
                 + "The resource is added into the new project \"CS2113 Group Project\".\n"
                 + MainUi.SIGNAL_FOR_USER_TO_INPUT
                 + "Resource is not found. Please enter a valid index. " + "\n"
@@ -298,7 +293,7 @@ class DukeTest {
 
         Duke.main(null);
 
-        String targetString = dukeStandardHeading
+        String targetString = MainUi.DUKE_STANDARD_HEADING
                 + "The resource is added into the new project \"CS2113 Group Project\".\n"
                 + MainUi.SIGNAL_FOR_USER_TO_INPUT
                 + "Project is not found ... " + "\n"
@@ -325,7 +320,7 @@ class DukeTest {
 
         Duke.main(null);
 
-        String targetString = dukeStandardHeading
+        String targetString = MainUi.DUKE_STANDARD_HEADING
                 + "The resource is added into the new project \"CS2113 Group Project\".\n"
                 + MainUi.SIGNAL_FOR_USER_TO_INPUT
                 + "The resource is added to the existing project \"CS2113 Group Project\".\n"
@@ -380,7 +375,7 @@ class DukeTest {
 
         Duke.main(null);
 
-        String targetString = dukeStandardHeading
+        String targetString = MainUi.DUKE_STANDARD_HEADING
                 + "The resource is added into the new project \"CS2113 Group Project\".\n"
                 + MainUi.SIGNAL_FOR_USER_TO_INPUT
                 + "The resource is successfully edited to : \n"
@@ -448,7 +443,7 @@ class DukeTest {
 
         Duke.main(null);
 
-        String targetString = dukeStandardHeading
+        String targetString = MainUi.DUKE_STANDARD_HEADING
                 + "The resource is added into the new project \"CS2113 Group Project\".\n"
                 + MainUi.SIGNAL_FOR_USER_TO_INPUT
                 + "The resource is added to the existing project \"CS2113 Group Project\".\n"
@@ -486,7 +481,7 @@ class DukeTest {
 
         Duke.main(null);
 
-        String helpExpectedOutput = dukeStandardHeading
+        String helpExpectedOutput = MainUi.DUKE_STANDARD_HEADING
                 + MainUi.EXIT_MESSAGE + "\n";
 
         assertEquals(newOutputStream.toString(), helpExpectedOutput);
@@ -508,7 +503,7 @@ class DukeTest {
 
         Duke.main(null);
 
-        String targetString = dukeStandardHeading
+        String targetString = MainUi.DUKE_STANDARD_HEADING
                 + "The resource is added into the new project \"CS2113 Group Project\".\n"
                 + MainUi.SIGNAL_FOR_USER_TO_INPUT
                 + "The resource is added to the existing project \"CS2113 Group Project\".\n"
@@ -541,7 +536,7 @@ class DukeTest {
 
         Duke.main(null);
 
-        String targetString = dukeStandardHeading
+        String targetString = MainUi.DUKE_STANDARD_HEADING
                 + "The resource is added into the new project \"CS2113 Group Project\".\n"
                 + MainUi.SIGNAL_FOR_USER_TO_INPUT
                 + "The resource is added to the existing project \"CS2113 Group Project\".\n"
