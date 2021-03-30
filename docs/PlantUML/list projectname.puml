@@ -1,0 +1,61 @@
+@startuml
+
+box list PROJECTNAME feature
+participant ":CommandHandler" as CH
+'participant "P1:Project" as P1
+'participant "P2:Project" as P2
+'participant "P3:Project" as P3
+participant ":ArrayList<Project>" as PA
+participant ":Project" as PC
+participant ":ArrayList<Resources>" as RA
+
+
+create PA
+CH -> PA
+
+create RA
+PA -> RA
+
+[-> CH: processCommand()
+activate CH
+
+CH -> CH: printResourceListForAProject()
+activate CH
+
+CH -> CH: processProjectName()
+activate CH
+return projectName
+
+alt isProjectNameEmpty
+    break NoProjectNameException
+    end
+else
+    loop Length of ArrayList<Project>
+        CH -> PA
+        activate PA
+        PA -> PC: getProjectName()
+        activate PC
+        return
+        return
+        opt getProjectName().equals(projectName)
+            CH -> PA:
+            activate PA
+            PA -> RA: getResource()
+            activate RA
+            return
+            return
+            CH -> CH: printResourceList()
+            activate CH
+            loop Length of ArrayList<Resource>
+                CH -> CH: print()
+            end
+            return
+            return
+            return IsLoop:boolean
+        end
+    end
+end
+break ProjectNotFoundException
+end
+endbox
+@enduml

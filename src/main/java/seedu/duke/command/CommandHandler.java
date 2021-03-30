@@ -282,7 +282,8 @@ public class CommandHandler {
      */
     private void printResourceListForAProject() throws NoProjectNameException, ProjectNotFoundException {
         String projectName = processProjectName();
-        if (checkIfProjectNameEmpty(projectName)) {
+        boolean isProjectNameEmpty = checkIfProjectNameEmpty(projectName);
+        if (isProjectNameEmpty) {
             throw new NoProjectNameException();
         }
         for (Project project : projects) {
