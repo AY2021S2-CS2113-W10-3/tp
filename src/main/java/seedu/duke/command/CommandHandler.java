@@ -100,6 +100,7 @@ public class CommandHandler {
             break;
         case LOAD_COMMAND:
             ProjectManager.setProjects(Storage.readFromStorage());
+            Duke.setProjects(ProjectManager.getProjects());
             break;
         default:
             promptUserInvalidInput();
